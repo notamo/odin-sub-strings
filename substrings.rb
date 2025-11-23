@@ -1,13 +1,9 @@
 def substrings(string, substring_array)
   substring_array.reduce(Hash.new(0)) do |acc, word|
     offset = 0
-    while true
-      if offset = string.downcase.index(word, offset)
+    while offset = string.downcase.index(word, offset)
         acc[word] += 1
         offset += 1
-      else
-        break
-      end
     end
     acc
   end
